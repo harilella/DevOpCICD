@@ -1,0 +1,30 @@
+Controller Manager: 
+Kubernetes runs multiple controller managers as part of its control plane components. Each controller manager is responsible for a specific type of controller. 
+For example, there is a ReplicaSet controller manager, a Deployment controller manager, and so on. These controller managers continuously watch for changes to the resources they are responsible for.
+As of my last knowledge update in September 2021, Kubernetes includes several built-in controllers to manage different types of resources. The exact number of controllers may vary depending on the Kubernetes version and any custom controllers you may have deployed. Here are some of the core controllers that were present in Kubernetes at that time:
+
+1. **ReplicationController**: Manages the desired number of replicas of a Pod and ensures that the specified number of Pods is always running.
+
+2. **Deployment**: Provides declarative updates to applications. It allows you to describe an application's lifecycle, including which images to use for app components, the number of replicas, and how to update them gracefully.
+
+3. **StatefulSet**: Manages the deployment and scaling of a set of Pods with unique, stable network identities. It's often used for stateful applications like databases.
+
+4. **DaemonSet**: Ensures that all Nodes in the cluster run a copy of a specific Pod. Typically used for running system daemons like log collectors or monitoring agents on every Node.
+
+5. **Job**: Creates one or more Pods and ensures that a specified number of them successfully terminate. Jobs are often used for batch processing or running short-lived tasks.
+
+6. **CronJob**: Manages the execution of Jobs on a schedule, similar to a cron job in a traditional Unix-like environment.
+
+7. **Service**: Exposes a set of Pods as a network service. Services provide stable endpoints for applications to access.
+
+8. **Namespace**: While not strictly a controller, namespaces are used for resource isolation and access control. They can be thought of as a way to group and organize resources within a cluster.
+
+9. **HorizontalPodAutoscaler (HPA)**: Automatically scales the number of Pods in a Deployment, ReplicaSet, or StatefulSet based on CPU or custom metrics.
+
+10. **PodDisruptionBudget (PDB)**: Ensures that a certain number of Pods in a Deployment, ReplicaSet, or StatefulSet are available during disruptions, such as maintenance or scaling events.
+
+11. **ServiceAccount**: Manages the access permissions and secrets for Pods.
+
+Please note that Kubernetes is an active open-source project, and its feature set may have expanded or evolved since my last update. Additionally, custom controllers can be created to manage specific resources or implement custom logic tailored to your application needs.
+
+To get an up-to-date list of controllers available in your specific Kubernetes cluster, you can use the `kubectl get controller` or `kubectl get controllers` command, if available in your cluster. Alternatively, you can refer to the official Kubernetes documentation for the latest information on controllers and their functionalities.
